@@ -20,7 +20,12 @@
         .rtt1{position: absolute;bottom: 0;right: 0;font-size: 3rem;}
         .each:nth-child(2){background-color: yellow;position: relative;}
         .each:nth-child(2) h1{font-size: 50%;}
-        .lavel{position: absolute;left: 30%;}
+        .lavel{position: absolute;left: 30%;display: flex;flex-direction: column;top: 50%;transform: translateY(-50%);}
+        #rl{margin-top: 10px;}
+        .choi{border: 1px solid #000;margin-top: 100px;}
+        .rldl{position: absolute;right: 20%;font-size: 30%;top: 50%;transform: translateY(-50%);}
+        .rlrs{font-size: 30%;position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);}
+        /* .rldl h3{} */
         .each:nth-child(3){background-color: blue;font-size: 3rem;position: relative;}
         .box1{position: absolute;top: 30%;left: 30%;}
         .box2{position: absolute;top: 30%;right: 30%;}
@@ -43,7 +48,13 @@
                 <select name="rl" id="rl">
                     <option value="number">number</option>
                 </select>
+                <button class="choi">choice</button>
             </div>
+            <div class="rldl">
+                <h3>The number is:</h3>
+                <div class="rlnb">0</div>
+            </div>
+            <div class="rlrs">0</div>
         </div>
         <div class="each">
             <h1>🃏BLACK JACK🃏</h1>
