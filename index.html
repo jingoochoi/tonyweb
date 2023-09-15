@@ -18,7 +18,9 @@
         }
         .key1{font-size: 2rem;position: fixed;bottom: 0;left: 0;right: 0;z-index: 333;}
         .rtt1{position: absolute;bottom: 0;right: 0;font-size: 3rem;}
-        .each:nth-child(2){background-color: yellow;}
+        .each:nth-child(2){background-color: yellow;position: relative;}
+        .each:nth-child(2) h1{font-size: 50%;}
+        .lavel{position: absolute;left: 30%;}
         .each:nth-child(3){background-color: blue;font-size: 3rem;position: relative;}
         .box1{position: absolute;top: 30%;left: 30%;}
         .box2{position: absolute;top: 30%;right: 30%;}
@@ -36,7 +38,12 @@
             
         </div>
         <div class="each">
-            
+            <h1>ROULETTE</h1>
+            <div class="lavel">
+                <select name="rl" id="rl">
+                    <option value="number">number</option>
+                </select>
+            </div>
         </div>
         <div class="each">
             <h1>🃏BLACK JACK🃏</h1>
@@ -101,6 +108,19 @@
                     window.scrollTo(0,0)
                 }
             }
+        }
+        window.addEventListener('DOMContentLoaded',rlft)
+        let rl=document.querySelector('#rl')
+
+        function rlft() {
+            
+                for (let i = 0; i < 36; i++) {
+                    rl.innerHTML+=`
+                    <option value="number${i+1}">${i+1}</option>
+                    `
+                    
+                }
+            
         }
         window.addEventListener('DOMContentLoaded',clft)
         let play=document.querySelector('.play')
