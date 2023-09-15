@@ -24,7 +24,7 @@
         #rl{margin-top: 10px;}
         .choi{border: 1px solid #000;margin-top: 100px;}
         .rldl{position: absolute;right: 20%;font-size: 30%;top: 50%;transform: translateY(-50%);}
-        .rlrs{font-size: 30%;position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);}
+        .rlrs{font-size: 30%;position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);cursor: pointer;}
         /* .rldl h3{} */
         .each:nth-child(3){background-color: blue;font-size: 3rem;position: relative;}
         .box1{position: absolute;top: 30%;left: 30%;}
@@ -54,7 +54,7 @@
                 <h3>The number is:</h3>
                 <div class="rlnb">0</div>
             </div>
-            <div class="rlrs">0</div>
+            <div class="rlrs"></div>
         </div>
         <div class="each">
             <h1>🃏BLACK JACK🃏</h1>
@@ -122,16 +122,27 @@
         }
         window.addEventListener('DOMContentLoaded',rlft)
         let rl=document.querySelector('#rl')
-
+        let choi=document.querySelector('.choi')
+        let rlrs=document.querySelector('.rlrs')
         function rlft() {
-            
-                for (let i = 0; i < 36; i++) {
-                    rl.innerHTML+=`
-                    <option value="number${i+1}">${i+1}</option>
-                    `
-                    
-                }
-            
+            for (let i = 0; i < 36; i++) {
+                rl.innerHTML+=`
+                <option value="${i+1}">${i+1}</option>
+                `
+                
+            }
+            choi.onclick=function(){
+                let spin=Math.ceil(Math.random()*36)
+                document.querySelector('.rlnb').innerHTML=spin
+                // console.log(rl.value)
+                if (spin==rl.value) {
+                    rlrs.innerHTML=`🎉you win🎉<br>click here to reset`
+                }else rlrs.innerHTML=`😭you lose😭<br>click here to reset`
+            }
+            rlrs.onclick=function(){
+                rlrs.innerHTML=''
+                document.querySelector('.rlnb').innerHTML=0
+            }
         }
         window.addEventListener('DOMContentLoaded',clft)
         let play=document.querySelector('.play')
