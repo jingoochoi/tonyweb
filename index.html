@@ -153,7 +153,7 @@
                 rlrs.innerHTML=''
                 document.querySelector('.rlnb').innerHTML=0
             }
-            console.log(coin)
+            // console.log(coin)
             
         }
         window.addEventListener('DOMContentLoaded',clft)
@@ -173,11 +173,15 @@
                 pose+=draw
                 if (jack==2&&pose==21) {
                     sult.innerHTML=`🎉black jack🎉<br>click here to reset`
+                    coin+=3
+                    chip.innerHTML=coin
                 }
                 // console.log(pose,draw)
                 play.innerHTML=pose
                 if (pose>21) {
                     sult.innerHTML=`burst.<br>click here to reset`
+                    coin-=2
+                    chip.innerHTML=coin
                 }
             }
             document.querySelector('.stay').onclick=function(){
@@ -186,16 +190,22 @@
                 document.querySelector('.deal').innerHTML=card
                 if (card>21) {
                     sult.innerHTML=`dealer burst. you win.<br>click here to reset`
+                    coin+=2
+                    chip.innerHTML=coin
                     return
                 }
                 if (pose>card) {
                     sult.innerHTML=`you win.<br>click here to reset`
+                    coin+=2
+                    chip.innerHTML=coin
                 }
                 if (pose==card) {
                     sult.innerHTML=`push (means draw).<br>click here to reset`
                 }
                 if (pose<card) {
                     sult.innerHTML=`dealer win. you lose.<br>click here to reset`
+                    coin-=2
+                    chip.innerHTML=coin
                 }
             }
             sult.onclick=function(){
