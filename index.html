@@ -17,6 +17,8 @@
             to{text-shadow: 0 0 30px aquamarine;}
         }
         .key1{font-size: 2rem;position: fixed;bottom: 0;left: 0;right: 0;z-index: 333;}
+        .cred{display: flex;font-size: 30%;position: fixed;bottom: 10%;left: 50%;transform: translateX(-50%);z-index: 333;}
+        .cred p{margin: 0;}
         .rtt1{position: absolute;bottom: 0;right: 0;font-size: 3rem;}
         .each:nth-child(2){background-color: yellow;position: relative;}
         .each:nth-child(2) h1{font-size: 50%;}
@@ -40,7 +42,10 @@
         <div class="each">
             <span>TONY<br>WEB</span>
             <div class="key1">왼쪽 화살표나 오른쪽 화살표를 눌러 이동해주세요</div>
-            
+            <div class="cred">
+                <p>chip=</p>
+                <div class="chip">0</div>
+            </div>
         </div>
         <div class="each">
             <h1>🎆ROULETTE🎆</h1>
@@ -84,6 +89,9 @@
         }, 10);
         document.addEventListener('keydown',kdft)
         let num=0
+        let chip=document.querySelector('.chip')
+        let coin=10
+        chip.innerHTML=coin
         function kdft() {
             if (event.key=='ArrowRight') {
                 num++
