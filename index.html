@@ -145,12 +145,16 @@
                 // console.log(rl.value)
                 if (spin==rl.value) {
                     rlrs.innerHTML=`🎉you win🎉<br>click here to reset`
-                }else rlrs.innerHTML=`😭you lose😭<br>click here to reset`
+                    coin+=35
+                    chip.innerHTML=coin
+            }else rlrs.innerHTML=`😭you lose😭<br>click here to reset`;coin--;chip.innerHTML=coin
             }
             rlrs.onclick=function(){
                 rlrs.innerHTML=''
                 document.querySelector('.rlnb').innerHTML=0
             }
+            console.log(coin)
+            
         }
         window.addEventListener('DOMContentLoaded',clft)
         let play=document.querySelector('.play')
