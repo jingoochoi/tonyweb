@@ -38,7 +38,7 @@
         .each:last-child h1{font-size: 33%;}
         .mcbx{display: flex;position: absolute;top: 30%;left: 50%;transform: translateX(-50%);gap: 0 300px;}
         .slbt{position: absolute;bottom: 40%;left: 50%;transform: translateX(-50%);}
-        .srst{font-size: 30%;position: absolute;bottom: 30%;left: 50%;transform: translateX(-50%);}
+        .srst{font-size: 30%;position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.min.js"></script>
@@ -247,11 +247,29 @@
         }
         window.addEventListener('click',function () {
             const slbt=document.querySelector('.slbt')
-            const sln1=document.querySelector('.sln1')
-            const sln2=document.querySelector('.sln2')
-            const sln3=document.querySelector('.sln3')
+            let sln1=document.querySelector('.sln1')
+            let sln2=document.querySelector('.sln2')
+            let sln3=document.querySelector('.sln3')
+            const srst=document.querySelector('.srst')
             slbt.onclick=function(){
-                ///////
+                sln1.innerHTML=Math.ceil(Math.random()*9)
+                sln2.innerHTML=Math.ceil(Math.random()*9)
+                sln3.innerHTML=Math.ceil(Math.random()*9)
+                if (sln1.innerHTML==sln2.innerHTML&&sln2.innerHTML==sln3.innerHTML) {
+                    srst.innerHTML=`🎉JACK POT🎉.congratulations<br>click here to reset`
+                    coin+=100
+                    chip.innerHTML=coin
+                }
+                else{
+                    srst.innerHTML=`T.T...I wish you good luck next time<br>click here to reset`
+                    coin-=1
+                    chip.innerHTML=coin
+                    if (coin<1) {
+                        alert('BANKRUPT!!!!')
+                        coin=10
+                        chip.innerHTML=coin
+                    }
+                }
             }
         })
     </script>
