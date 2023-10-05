@@ -34,7 +34,11 @@
         button{cursor: pointer;height: 30px;border-radius: none;border: none;width: 100px;}
         .sult{position: absolute;bottom: 30%;left: 0;right: 0;cursor: pointer;}
         .rtt3{position: absolute;top: 0;right: 0;font-size: 3rem;}
-        .each:last-child{background-color: red;}
+        .each:last-child{background-color: red;position: relative;}
+        .each:last-child h1{font-size: 33%;}
+        .mcbx{display: flex;position: absolute;top: 30%;left: 50%;transform: translateX(-50%);gap: 0 300px;}
+        .slbt{position: absolute;bottom: 40%;left: 50%;transform: translateX(-50%);}
+        .srst{font-size: 30%;position: absolute;bottom: 30%;left: 50%;transform: translateX(-50%);}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.min.js"></script>
@@ -82,7 +86,14 @@
             
         </div>
         <div class="each">
-            
+            <h1>🎰SLOT MACHINE🎰</h1>
+            <div class="mcbx">
+                <div class="sln1">0</div>
+                <div class="sln2">0</div>
+                <div class="sln3">0</div>
+            </div>
+            <button class="slbt">spin</button>
+            <div class="srst">0</div>
         </div>
     </div>
     <script>
@@ -233,8 +244,13 @@
                 document.querySelector('.deal').innerHTML='0'
                 sult.innerHTML=''
             }
-           
         }
+        window.addEventListener('click',function () {
+            const slbt=document.querySelector('.slbt')
+            slbt.onclick=function(){
+                //////
+            }
+        })
     </script>
 </body>
 </html>
